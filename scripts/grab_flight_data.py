@@ -60,38 +60,28 @@ for elt in flight_data:
        # Timeline Info
        timeline_info = item['timeline']
        # Arrival Airport
-       flight_info['city'] = timeline_info['arrivalAirport'].get('city', None)
-       flight_info['full_airport_name'] = timeline_info['arrivalAirport'].get('longName', None)
+       flight_info['arrival_city'] = timeline_info['arrivalAirport'].get('city', None)
+       flight_info['arrival_full_airport_name'] = timeline_info['arrivalAirport'].get('longName', None)
+       flight_info['arrival_time'] = timeline_info['arrivalTime'].get('time', None)
+       flight_info['arrival_date'] = timeline_info['arrivalTime'].get('date', None)
+
+       # Carrier Info
+       flight_info['airline_name'] = timeline_info['carrier'].get('airlineName', None)
+       flight_info['flight_number'] = timeline_info['carrier'].get('flightNumber', None)
+
+       # Depature Info
+       flight_info['depature_city'] = timeline_info['depatureAirport'].get('city', None)
+       flight_info['depature_full_airport_name'] = timeline_info['depatureAirport'].get('longName', None)
+       flight_info['depature_time'] = timeline_info['depatureTime'].get('time', None)
+       flight_info['depature_date'] = timeline_info['depatureTime'].get('date', None)
+
+       # Duration Info
+       flight_info['duration_hour'] = timeline_info['duration'].get('hour', None)
+       flight_info['duration_mins'] = timeline_info['duration'].get('minutes', None)
 
 
 
 
-
-
-
-
-   key: timeline
-   value: [{'layover': False,
-            'arrivalAirport': {'code': 'MIA', 'longName': 'Miami, FL (MIA-Miami Intl.)', 'city': 'Miami',
-                               'name': 'Miami (Miami Intl.)', 'airportCityState': 'Miami, FL',
-                               'localName': 'Miami Intl.'}, 'segment': True,
-            'distance': {'total': 596, 'unit': 'mi', 'formattedTotal': '596'},
-            'carrier': {'operatedBy': '', 'seatMapAvailable': True, 'airlineImageFileName': 'AA.gif',
-                        'operatedByAirlineCode': '', 'airlineCode': 'AA', 'showCabinClass': True,
-                        'flightNumber': '1177', 'airlineName': 'American Airlines', 'planeCode': '319',
-                        'airlineImageFileNameWithoutExtension': 'AA', 'bookingCode': 'B', 'plane': 'Airbus A319',
-                        'cabinClass': '3'}, 'brandedFareName': None,
-            'departureTime': {'hour': None, 'time': '6:53am', 'isoStr': '2019-05-20T06:53:00-04:00',
-                              'date': '5/20/2019', 'dateLongStr': 'Mon, May 20', 'travelDate': '05/20/19',
-                              'dateTime': 1558349580000},
-            'departureAirport': {'code': 'ATL', 'longName': 'Atlanta, GA (ATL-Hartsfield-Jackson Atlanta Intl.)',
-                                 'city': 'Atlanta', 'name': 'Atlanta (Hartsfield-Jackson Atlanta Intl.)',
-                                 'airportCityState': 'Atlanta, GA', 'localName': 'Hartsfield-Jackson Atlanta Intl.'},
-            'meals': [],
-            'duration': {'hours': 1, 'departureTimeOfDay': '', 'numOfDays': 0, 'arrivalTimeOfDay': '', 'minutes': 58},
-            'type': 'Segment',
-            'arrivalTime': {'hour': None, 'time': '8:51am', 'isoStr': '2019-05-20T08:51:00-04:00', 'date': '5/20/2019',
-                            'dateLongStr': 'Mon, May 20', 'travelDate': '05/20/19', 'dateTime': 1558356660000}}]
 
 key: price
 value: {'hasFare': True, 'roundedBestPriceDelta': None, 'formattedPriceWithCreditCardFeesEstimate': '', 'flightFareTypeCode': 'P', 'formattedRoundedBestPriceDelta': None, 'currencyCode': 'USD', 'priceIllegal': False, 'flightFareTypeValue': 1, 'totalPriceAsDecimal': 222.6, 'formattedPrice': '$111.30', 'totalPriceAsDecimalString': '222.6', 'bestPriceDelta': 0.0, 'localizedCurrencyCode': 'USD', 'formattedTotalPrice': '$222.60', 'pricedFlight': False, 'formattedRoundedTotalPrice': '$223', 'exactPrice': 111.3, 'formattedBestPriceDelta': None, 'formattedRoundedPrice': '$112', 'earnGPSRewards': None, 'offerPrice': 112.0, 'hasFees': False, 'feesMessage': {'showHandBaggageOnlyMsg': False, 'bringFreeCheckedBags': False, 'showBaggageFeeNotIncludedMsg': False, 'isShowFreeCancellation': True, 'airlineBasedBaggageAllowance': 0, 'baggageAllowance': '', 'matchDataAirProvider': True, 'isShowBestPriceGuarantee': False, 'isFlightIneligibleForBPG': False, 'showOBFeeDetailLink': False, 'bringOneFreeCheckedBag': False, 'showBaggageFeeIncludedMsg': False, 'showLCCBaggageAllowanceMsg': False, 'showBaggageFeeOnPurchaseMsg': False, 'showOBFeeMessageForLeg': False, 'freeCancellationTimeLimit': 0, 'showFirstCheckedBagIncludedMsg': False, 'specialFareMessage': '', 'showCheckedBagIncludedMsg': False, 'payFeeForBagMsg': False, 'apacFreeCancellation': False, 'nextGenContentWithLink': False}}
